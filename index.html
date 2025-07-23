@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NABORI Corp - Prueba Diagnóstica de Matemáticas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Pantalla de Bienvenida -->
+        <div id="welcome-screen">
+            <header class="app-header">
+                <img src="https://static.wixstatic.com/media/af3a4a_d429ad2cdddc45338bf5cb5ad1d08127~mv2.jpg"
+                    alt="Logo NABORI Corp" class="logo">
+                <h1>Prueba Diagnóstica SAT/College Board de Matemáticas</h1>
+            </header>
+            <main class="welcome-main">
+                <h2>Instrucciones Generales</h2>
+                <ul class="instructions-list">
+                    <li>Esta prueba está dividida en <strong>DOS SECCIONES</strong>.</li>
+                    <li><strong>Sección I:</strong> Temas del SAT College Board (48 preguntas). Tiempo: 60 minutos.</li>
+                    <li><strong>Sección II:</strong> Conceptos Matemáticos Básicos (20 preguntas). Tiempo: 30 minutos
+                        adicionales.</li>
+                    <li>Selecciona la mejor respuesta para cada pregunta.</li>
+                    <li>Tu progreso se guardará en este navegador.</li>
+                    <li>Al finalizar, recibirás un reporte detallado con tus resultados.</li>
+                </ul>
+                <div class="student-info">
+                    <input type="text" id="student-name" placeholder="Escribe tu nombre completo">
+                    <input type="date" id="exam-date">
+                </div>
+                <button id="start-exam-btn">Iniciar Sección I</button>
+            </main>
+        </div>
+
+        <!-- Pantalla del Examen -->
+        <div id="exam-screen" class="hidden">
+            <header class="app-header-exam">
+                <img src="https://static.wixstatic.com/media/af3a4a_d429ad2cdddc45338bf5cb5ad1d08127~mv2.jpg"
+                    alt="Logo NABORI Corp" class="logo-small">
+                <div id="exam-header-info">
+                    <h2 id="section-title"></h2>
+                </div>
+                <div id="timer-container">
+                    <span id="timer-label">Tiempo Restante:</span>
+                    <span id="timer">00:00</span>
+                </div>
+            </header>
+            <main>
+                <form id="quiz-form">
+                    <div id="questions-container"></div>
+                </form>
+                <div class="navigation-buttons">
+                    <button id="next-section-btn" class="hidden">Ir a la Siguiente Sección</button>
+                    <button id="finish-exam-btn" class="hidden">Finalizar Examen</button>
+                </div>
+            </main>
+        </div>
+
+        <!-- Pantalla de Resultados -->
+        <div id="results-screen" class="hidden">
+            <header class="app-header">
+                <img src="https://static.wixstatic.com/media/af3a4a_d429ad2cdddc45338bf5cb5ad1d08127~mv2.jpg"
+                    alt="Logo NABORI Corp" class="logo">
+                <h1>Reporte de Resultados</h1>
+            </header>
+            <main class="results-main">
+                <div id="summary-container">
+                    <!-- El contenido del resumen se genera con JS -->
+                </div>
+                <div id="results-actions">
+                    <button id="download-send-btn">Descargar Reporte en PDF y Enviar</button>
+                </div>
+                <div id="results-breakdown">
+                    <h3>Desglose de Respuestas</h3>
+                    <!-- El desglose se genera con JS -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
